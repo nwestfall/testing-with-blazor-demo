@@ -1,0 +1,13 @@
+
+@code
+{
+    [Fact]
+    public void HelloWorldComponentRendersCorrectly()
+    {
+        using var ctx = new TestContext();
+
+        var cut = ctx.Render(@<HelloWorld />);
+
+        cut.MarkupMatches(@<h1>Hello world from Blazor</h1>);
+    }
+}
